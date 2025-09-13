@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Portfolio Design System */
+
+@layer base {
+  :root {
+  /* Modern Dark Colors */
+
+  --background: 232 10% 20%; /* Slightly lighter neutral dark gray */
+  --foreground: 0 0% 100%; /* White text for contrast */
+
+  --card: 232 10% 24%; /* Match section gradient */
+  --card-foreground: 0 0% 100%; /* White text for contrast */
+
+  --popover: 232 10% 22%; /* Match section gradient */
+  --popover-foreground: 0 0% 100%; /* White text for contrast */
+
+  --primary: 222 100% 60%; /* Blue Accent */
+  --primary-foreground: 0 0% 100%;
+  --primary-glow: 222 100% 70%; /* Blue Glow */
+
+  --secondary: 271 100% 40%; /* Purple Accent */
+  --secondary-foreground: 0 0% 100%; /* White text for contrast */
+
+  --muted: 232 10% 28%; /* Slightly lighter for muted */
+  --muted-foreground: 0 0% 100%;
+
+  --accent: 271 100% 60%; /* Electric Purple */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 222 26% 20%; /* Navy Border */
+  --input: 222 26% 20%; /* Navy Input */
+    --ring: 270 91% 65%;
+
+    --radius: 0.75rem;
+
+  /* Modern Dark Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--primary-glow)) 100%);
+  --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(222 26% 14%) 100%);
+
+    /* Professional Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.25);
+    --shadow-card: 0 4px 20px -4px hsl(215 25% 15% / 0.1);
+
+    /* Smooth Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Professional Dark Theme */
+  --background: 0 0% 14%; /* Neutral Natural Dark Gray */
+    --foreground: 210 20% 98%; /* Light Gray */
+
+    --card: 222 26% 14%; /* Slightly lighter navy */
+    --card-foreground: 210 20% 98%; /* Light Gray */
+
+    --popover: 222 26% 12%; /* Popover Navy */
+    --popover-foreground: 210 20% 98%; /* Light Gray */
+
+    --primary: 222 100% 60%; /* Blue Accent */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 222 100% 70%; /* Blue Glow */
+
+    --secondary: 271 100% 40%; /* Purple Accent */
+    --secondary-foreground: 210 20% 98%; /* Light Gray */
+
+    --muted: 222 10% 25%; /* Muted Navy */
+    --muted-foreground: 210 10% 60%;
+
+    --accent: 271 100% 60%; /* Electric Purple */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 26% 20%; /* Navy Border */
+    --input: 222 26% 20%; /* Navy Input */
+    --ring: 222 100% 60%;
+
+    /* Professional Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--primary-glow)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(222 26% 14%) 100%);
+
+    /* Professional Dark Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(222 26% 10% / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(222 26% 10% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  }
+
+  .section-gradient {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    color: #fff;
+  }
+
+  /* Professional Cards */
+  .professional-card {
+    @apply bg-card border border-border rounded-lg shadow-lg hover:shadow-xl transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .professional-card:hover {
+    box-shadow: var(--shadow-elegant);
+    transform: translateY(-2px);
+  }
+
+  /* Skill Pills */
+  .skill-pill {
+    @apply bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-medium;
+    transition: var(--transition-smooth);
+  }
+
+  .skill-pill:hover {
+    @apply bg-accent text-accent-foreground;
+    transform: translateY(-1px);
+  }
+
+  /* Animated Underlines */
+  .animated-underline {
+    @apply relative;
+  }
+
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Professional Button Variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold;
+    box-shadow: var(--shadow-elegant);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-hero:hover {
+    @apply bg-accent;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline-professional {
+    @apply border-2 border-primary text-primary px-6 py-2 rounded-lg font-medium bg-transparent;
+    transition: var(--transition-smooth);
+  }
+
+  .btn-outline-professional:hover {
+    @apply bg-primary text-primary-foreground;
+    box-shadow: var(--shadow-elegant);
+  }
+}
+
+/* Smooth Animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
