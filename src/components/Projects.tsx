@@ -4,6 +4,16 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
+      title: "Portfolio Website",
+      description: `My personal portfolio website showcasing my skills, projects, and contact information. Built with React, TypeScript, Vite, and Tailwind CSS for a modern, responsive experience.\n\nKey Features:\n- Sidebar navigation\n- Multi-page routing\n- Downloadable CV\n- Professional UI/UX\n- Deployed on Netlify`,
+      technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn-ui"],
+      category: "Portfolio",
+      featured: true,
+      github: "https://github.com/Tahirmehmood22/Portfolio-website",
+      live: "https://portfolio-website-a46f68.netlify.app/",
+  screenshot: "/portfolio-website.png"
+    },
+    {
       title: "Fullstack Project",
       description: `A fullstack web application featuring both frontend and backend functionality. Built with modern technologies for a seamless user experience.\n\nKey Features:\n- RESTful API integration\n- User authentication\n- Responsive design\n- Deployed on Netlify`,
       technologies: ["React", "Node.js", "Express", "MongoDB", "HTML", "CSS", "JavaScript"],
