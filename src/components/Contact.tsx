@@ -106,6 +106,7 @@ const Contact = () => {
                       id="firstName" 
                       placeholder="Your first name"
                       className="w-full"
+                      autoComplete="given-name"
                     />
                   </div>
                   <div>
@@ -116,6 +117,7 @@ const Contact = () => {
                       id="lastName" 
                       placeholder="Your last name"
                       className="w-full"
+                      autoComplete="family-name"
                     />
                   </div>
                 </div>
@@ -129,6 +131,7 @@ const Contact = () => {
                     type="email" 
                     placeholder="your.email@example.com"
                     className="w-full"
+                    autoComplete="email"
                   />
                 </div>
                 
@@ -140,6 +143,7 @@ const Contact = () => {
                     id="subject" 
                     placeholder="What's this about?"
                     className="w-full"
+                    autoComplete="off"
                   />
                 </div>
                 
@@ -152,6 +156,7 @@ const Contact = () => {
                     placeholder="Tell me about your project or how I can help..."
                     rows={5}
                     className="w-full resize-none"
+                    autoComplete="off"
                   />
                 </div>
                 

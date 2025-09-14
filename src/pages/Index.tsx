@@ -4,9 +4,8 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
-  // ...existing code...
-  <Hero />
-  <Footer />
+      <Hero />
+      <Footer />
     </div>
   );
 };
