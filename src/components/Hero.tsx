@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const Hero = () => {
@@ -48,14 +49,14 @@ const Hero = () => {
                 className="btn-hero"
                 asChild
               >
-                <a href="/projects">View My Work</a>
+                <Link to="/projects">View My Work</Link>
               </Button>
               <Button 
                 variant="outline" 
                 className="btn-outline-professional"
                 asChild
               >
-                <a href="/contact">Get In Touch</a>
+                <Link to="/contact">Get In Touch</Link>
               </Button>
             </div>
           </div>

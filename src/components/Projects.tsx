@@ -73,11 +73,11 @@ const Projects = () => {
             Featured <span className="text-primary">Projects</span>
           </h2>
           
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
             {projects.map((project, index) => (
               <div 
                 key={index} 
-                className={`professional-card p-6 ${project.featured ? 'lg:col-span-1' : ''} animate-slide-up`}
+                className={`professional-card p-4 sm:p-5 md:p-6 ${project.featured ? 'sm:col-span-2 md:col-span-1' : ''} animate-slide-up`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start justify-between mb-4">
@@ -95,7 +95,7 @@ const Projects = () => {
                   <img
                     src={project.screenshot}
                     alt={project.title + " Screenshot"}
-                    className="w-full h-64 object-cover rounded-lg mb-6 border border-gray-700 shadow-md"
+                    className="w-full h-40 sm:h-48 md:h-56 lg:h-64 object-cover rounded-lg mb-4 sm:mb-6 border border-gray-700 shadow-md"
                   />
                 )}
                 <h3 className="text-xl font-bold mb-4 text-foreground animated-underline">
