@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import DownloadCVButton from "@/components/DownloadCVButton";
 
 const Contact = () => {
   const contactInfo = [
@@ -71,7 +72,7 @@ const Contact = () => {
               {/* Social Links */}
               <div className="mt-8 pt-8 border-t border-border">
                 <h4 className="text-lg font-semibold mb-4 text-foreground">Connect With Me</h4>
-                <div className="flex gap-4">
+                <div className="flex gap-4 flex-wrap">
                   <Button 
                     variant="outline" 
                     size="icon" 
@@ -88,6 +89,15 @@ const Contact = () => {
                   >
                     <Github className="h-5 w-5" />
                   </Button>
+                </div>
+                
+                {/* CV Download */}
+                <div className="mt-6">
+                  <h5 className="text-md font-medium mb-3 text-foreground">View My Resume</h5>
+                  <DownloadCVButton 
+                    variant="default" 
+                    className="btn-hero"
+                  />
                 </div>
               </div>
             </div>

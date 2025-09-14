@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Home, User, Briefcase, Award, Folder, Mail, Menu } from "lucide-react";
+import { Home, User, Briefcase, Award, Folder, Mail, Menu, Code } from "lucide-react";
 
 const sidebarItems = [
   { href: "/", icon: <Home />, label: "Home" },
@@ -33,24 +33,40 @@ const Sidebar = ({ isOpen: controlledOpen, setIsOpen: setControlledOpen }) => {
         />
       )}
       <aside
-        className={`fixed top-0 left-0 h-screen z-50 transition-all duration-300 bg-gradient-to-b from-[#232526] to-[#414345] shadow-xl flex flex-col items-center justify-center px-2
+        className={`fixed top-0 left-0 h-screen z-50 transition-all duration-300 bg-gradient-to-b from-[#232526] to-[#414345] shadow-xl flex flex-col px-2
         w-20 md:w-20
-        ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:static`}
+        ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:static md:block`}
         style={{ minWidth: '5rem', width: '5rem', paddingTop: 0 }}
       >
         {/* Toggle button always visible on mobile, hidden on desktop */}
         <button
-          className="mb-8 p-2 rounded-full bg-background text-foreground hover:bg-accent md:hidden"
+          className="mb-4 p-2 rounded-full bg-background text-foreground hover:bg-accent md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Sidebar"
-          style={{ position: 'absolute', top: 16, left: 16, zIndex: 60 }}
+          style={{ position: 'absolute', top: 8, right: 8, zIndex: 60 }}
         >
-          <Menu className="h-6 w-6" />
+          <Menu className="h-5 w-5" />
         </button>
-        {/* Sidebar nav: visible if open on mobile, always on desktop */}
-        {(isOpen || window.innerWidth >= 768) && (
-          <nav className="flex flex-col gap-12 items-center justify-center h-full">
-            {sidebarItems.map((item) => (
+        
+        {/* Logo and Name Section */}
+        <div className={`flex flex-col items-center justify-center pt-6 pb-8 ${isOpen ? 'block' : 'hidden'} md:block`}>
+          <div className="relative mb-3">
+            <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-lg hover:shadow-primary/25 transition-all duration-300 group">
+              <div className="relative">
+                <Code className="h-6 w-6 text-primary-foreground animate-spin-slow" />
+                <div className="absolute inset-0 bg-primary-glow opacity-0 group-hover:opacity-20 rounded-xl blur-sm transition-opacity duration-300"></div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            <h2 className="text-white font-bold text-sm leading-tight tracking-wide">TM</h2>
+            <p className="text-white/70 text-[11px] leading-tight tracking-widest">DEV</p>
+          </div>
+        </div>
+        
+        {/* Sidebar nav: hidden by default on mobile, visible when open, always visible on desktop */}
+        <nav className={`flex-col gap-6 items-center justify-center flex-1 pt-4 ${isOpen ? 'flex' : 'hidden'} md:flex`}>
+          {sidebarItems.map((item) => (
               <div key={item.href} className="group relative flex flex-col items-center w-full">
                 <button
                   onClick={() => handleNavClick(item.href)}
@@ -68,7 +84,6 @@ const Sidebar = ({ isOpen: controlledOpen, setIsOpen: setControlledOpen }) => {
               </div>
             ))}
           </nav>
-        )}
       </aside>
       {/* Floating menu button for mobile, only visible when sidebar is closed */}
       {!isOpen && (
